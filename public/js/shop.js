@@ -36,6 +36,39 @@ $("#items").on('click', '.add', function () {
     $('.openCloseCart').click(function(){
         $('#shoppingCart').toggle();
     });
-
-
 })
+
+
+$("#items").on('click', '.add', function () {
+    itemCount ++;
+    $('#itemCount').text(itemCount).css('display', 'block');
+    clone =  $(this).siblings().clone().appendTo('#cartItems')
+               .append('<button class="removeItem">Remove Item</button>');
+    var price = parseInt($(this).siblings().find('.price').text()); 
+    priceTotal += price;
+    $('#cartTotal').text("Total: â‚¬" + priceTotal);
+    });
+
+
+    $('#shoppingCart').on('click', '.removeItem', function(){
+        $(this).parent().remove();  
+        itemCount --;
+        $('#itemCount').text(itemCount);
+  
+        // Remove Cost of Deleted Item from Total Price
+        var price = parseInt($(this).siblings().find('.price').text());
+        priceTotal -= price;
+        $('#cartTotal').text("Total: php" + priceTotal);
+  
+        if (itemCount == 0) {
+          $('#itemCount').css('display', 'none');
+        }
+      });
+      $('#emptyCart').click(function() {
+        itemCount = 0;
+        priceTotal = 0;
+  
+        $('#itemCount').css('display', 'none');
+        $('#cartItems').text('');
+        $('#cartTotal').text("Total: â‚¬" + priceTotal);
+      }); 
