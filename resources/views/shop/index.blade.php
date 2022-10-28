@@ -1,5 +1,4 @@
 @extends('layouts.shop')
-
 @section('body')
 <h1>Your Shopping Cart</h1>
     <div id="cart-container">
