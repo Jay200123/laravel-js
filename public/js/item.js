@@ -21,19 +21,17 @@ $(document).ready(function () {
         
             {data: 'item_id'},
             {data: 'title'},
-            {data: 'imagePath'},
-            {data: 'description'},
-            {data: 'sell_price'},
-            {data: 'cost_price'},
-
-            {
-                data:null,
+            {   data:null,
                 render: function (data, type, row){
                     console.log(data.imagePath)
                     return '<img src="/storage/${data.imagePath}" width="50" height="60">';
                 }
             },
-            
+            // {data: 'imagePath'},
+            {data: 'description'},
+            {data: 'sell_price'},
+            {data: 'cost_price'},
+
             {data: null,
                 render: function (data, type, row) {
                     return "<a href='#' class = 'editBtn' id='editbtn' data-id=" + data.item_id + "><i class='fa-solid fa-pen-to-square' aria-hidden='true' style='font-size:24px' ></i></a><a href='#' class='deletebtn' data-id=" + data.item_id + "><i class='fa-sharp fa-solid fa-trash' style='font-size:24px; color:red'></a></i>";

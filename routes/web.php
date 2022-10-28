@@ -20,3 +20,5 @@ Route::get('/', function () {
 Route::resource('/customer', 'CustomerController');
 
 Route::resource('/item', 'ItemController');
+
+Route::view('/shop', 'shop.index');
