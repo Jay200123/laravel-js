@@ -16,4 +16,10 @@ class Customer extends Model
     protected $table ='customers';
 
     protected $fillable = ['title','fname','lname','addressline','town','zipcode','phone','creditlimit','level','user_id'];
+
+    public function orders(){
+
+        return $this->hasMany('App\Models\Order','customer_id');
+
+    }
 }

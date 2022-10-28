@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Order;
+use App\Models\Customer;
 use View;
 use Storage;
+use Log;
+use DB;
 
 class ItemController extends Controller
 {

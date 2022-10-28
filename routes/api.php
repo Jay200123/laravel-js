@@ -26,3 +26,8 @@ Route::GET('/items/show/{id}', ['uses' => 'ItemController@getItem', 'as' => 'ite
 Route::GET('/items/all', ['uses' => 'ItemController@getItemAll', 'as' => 'item.getitemall'] );
 Route::resource('items', 'ItemController');
 
+Route::post('/items/checkout',[
+    'uses' => 'ItemController@postCheckout',
+    'as' => 'checkout'
+]);
+
