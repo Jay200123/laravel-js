@@ -81,6 +81,7 @@ $(document).ready(function () {
         e.preventDefault();
         var id = $(this).data('id');
         $('#itemModal').modal('show');
+        // $('#editItemModal').modal('show');
 
         $.ajax({
 
